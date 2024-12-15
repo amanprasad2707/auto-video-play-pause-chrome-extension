@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Pause Video",
+  "version": "1.1",
+  "description": "Automatically pause the video when you change the tab or window and resume when you come back.",
+  "permissions": ["tabs", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["*://*.youtube.com/*"]
+}
